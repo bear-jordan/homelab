@@ -80,4 +80,15 @@ services:
       - TZ=Europe/Amsterdam
     volumes:
       - ./docker/appdata/sabnzbd/config:/config
-      - ./data/usenet:/data/usenet:rw
+      - ./data:/data
+  homarr:
+    container_name: homarr
+    image: ghcr.io/ajnart/homarr:latest
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
+      - ./docker/appdata/homarr/configs:/config
+      - ./docker/appdata/homarr/icons:/icons
+      - ./data:/data
+    ports:
+      - '7575:7575'
