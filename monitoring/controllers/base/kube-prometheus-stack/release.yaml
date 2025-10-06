@@ -28,4 +28,4 @@ spec:
         type: ClusterIP
         annotations:
           tailscale.com/expose: "true"
-      adminPassword: test
+          tailscale.com/hostname: grafana
