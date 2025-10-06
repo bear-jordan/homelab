@@ -10,9 +10,9 @@ spec:
   valuesFrom:
     - kind: Secret
       name: tailscale-oauth
-      valuesKey: clientId
+      valuesKey: client_id
       targetPath: oauth.clientId
     - kind: Secret
       name: tailscale-oauth
-      valuesKey: clientSecret
+      valuesKey: client_secret
       targetPath: oauth.clientSecret
