@@ -4,7 +4,6 @@ namespace: monitoring
 resources:
   - ../base/
   - namespace.yaml
-  - patch-release.yaml
 patches:
   - path: patch-release.yaml
     target:
