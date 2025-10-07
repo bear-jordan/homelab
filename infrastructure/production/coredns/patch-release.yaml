@@ -19,7 +19,7 @@ spec:
               lameduck 10s
           - name: ready
           - name: rewrite
-            parameters: "name grafana.local grafana.monitoring.svc.cluster.local"
+            parameters: "name grafana.local grafana.tail668610.ts.net"
           - name: kubernetes
             parameters: "cluster.local in-addr.arpa ip6.arpa"
             configBlock: |
