@@ -5,7 +5,7 @@ resources:
   - ../../base/longhorn/
   - namespace.yaml
 patches:
-  - path: patch-release
+  - path: patch-release.yaml
     target:
       group: helm.toolkit.fluxcd.io
       version: v2
