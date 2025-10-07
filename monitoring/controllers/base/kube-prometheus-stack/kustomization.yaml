@@ -3,3 +3,9 @@ kind: Kustomization
 resources:
   - release.yaml
   - repository.yaml
+configMapGenerator:
+  - name: prometheus-values
+    files:
+      values.yaml=values.yaml
+configurations:
+  - kustomize-config.yaml
