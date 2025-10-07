@@ -3,10 +3,3 @@ kind: Kustomization
 namespace: longhorn-system
 resources:
   - ../../base/longhorn/
-patches:
-  - path: patch-release.yaml
-    target:
-      group: helm.toolkit.fluxcd.io
-      version: v2
-      kind: HelmRelease
-      name: longhorn

@@ -3,4 +3,3 @@ kind: Kustomization
 namespace: coredns
 resources:
   - ../../base/coredns/
-  - namespace.yaml

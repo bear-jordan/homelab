@@ -3,10 +3,6 @@ kind: HelmRelease
 metadata:
   name: tailscale
 spec:
-  chart:
-    spec:
-      sourceRef:
-        namespace: tailscale
   valuesFrom:
     - kind: Secret
       name: oauth-secrets
