@@ -8,7 +8,7 @@ resources:
 patches:
   - path: patch-release.yaml
     target:
-      group: helm.toolkit.fluxcd.io
-      version: v2
-      kind: HelmRelease
+      group: batch
+      version: v1
+      kind: CronJob
       name: renovate
