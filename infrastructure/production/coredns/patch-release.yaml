@@ -11,6 +11,7 @@ spec:
     servers:
       - zones:
           - zone: .
+        port: 53
         plugins:
           - name: errors
           - name: health
