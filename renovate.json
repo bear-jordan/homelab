@@ -1,5 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "enabledManagers": ["npm", "kubernetes"],
+  "npm": {
+    "enabled": true,
+    "fileMatch": ["(^|/)package\\.json$"]
+  },
   "kubernetes": {
     "fileMatch": [
       "\\.yaml$"
@@ -7,3 +12,4 @@
   },
   "ignorePaths": ["clusters/production/flux-system/**"]
 }
+
