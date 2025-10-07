@@ -2,5 +2,7 @@ nameReference:
   - kind: ConfigMap
     version: v1
     fieldSpecs:
-      - path: spec/valuesFrom/name
+      - group: helm.toolkit.fluxcd.io
         kind: HelmRelease
+        path: spec/valuesFrom/name
+        version: v2
