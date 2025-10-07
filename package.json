@@ -4,7 +4,6 @@
   "private": true,
   "description": "Helper tools for the Homelab",
   "devDependencies": {
-    "prettier": "^3.3.3",
-    "prettier-plugin-yaml": "^2.0.1"
+    "prettier": "^3.3.3"
   }
 }
