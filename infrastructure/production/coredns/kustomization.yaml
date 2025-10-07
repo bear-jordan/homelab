@@ -4,10 +4,3 @@ namespace: coredns
 resources:
   - ../../base/coredns/
   - namespace.yaml
-patches:
-  - path: patch-release.yaml
-    target:
-      group: helm.toolkit.fluxcd.io
-      version: v2
-      kind: HelmRelease
-      name: coredns
