@@ -19,7 +19,7 @@ spec:
               lameduck 10s
           - name: ready
           - name: rewrite
-            parameters: "name suffix .local .tail668610.ts.net"
+            parameters: "name suffix .local .tail668610.ts.net answer auto"
           - name: kubernetes
             parameters: "cluster.local in-addr.arpa ip6.arpa"
             configBlock: |
