@@ -14,7 +14,7 @@ spec:
               image: renovate/renovate:latest
               args:
                 - bear-jordan/homelab
-            envFrom:
-              - configMapRef:
+              envFrom:
+                - configMapRef:
                   name: renovate-config-map
           restartPolicy: never

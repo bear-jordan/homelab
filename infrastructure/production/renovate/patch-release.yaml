@@ -8,6 +8,7 @@ spec:
       template:
         spec:
           containers:
-            envFrom:
-              - secretRef:
-                  name: renovate-secrets
+            - name: renovate
+              envFrom:
+                - secretRef:
+                    name: renovate-secrets
