@@ -12,4 +12,3 @@ spec:
         kind: HelmRepository
         name: longhorn
   interval: 1m0s
-  targetNamespace: longhorn-system

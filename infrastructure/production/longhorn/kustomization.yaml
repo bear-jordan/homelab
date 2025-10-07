@@ -4,3 +4,10 @@ namespace: longhorn-system
 resources:
   - ../../base/longhorn/
   - namespace.yaml
+patches:
+  - path: patch-release
+    target:
+      group: helm.toolkit.fluxcd.io
+      version: v2
+      kind: HelmRelease
+      name: longhorn
