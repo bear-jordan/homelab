@@ -4,5 +4,6 @@
     "fileMatch": [
       "\\.yaml$"
     ]
-  }
+  },
+  "ignorePaths": ["clusters/production/flux-system/**"]
 }
