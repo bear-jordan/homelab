@@ -12,3 +12,7 @@ spec:
         kind: HelmRepository
         name: coredns
   interval: 1m0s
+  valuesFrom:
+    - kind: ConfigMap
+      name: coredns-values
+      valuesKey: values.yaml
