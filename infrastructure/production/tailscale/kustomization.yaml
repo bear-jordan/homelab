@@ -3,7 +3,6 @@ kind: Kustomization
 namespace: tailscale
 resources:
   - ../../base/tailscale/
-  - namespace.yaml
   - oauth-secrets.yaml
 patches:
   - path: patch-release.yaml
