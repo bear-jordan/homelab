@@ -22,10 +22,6 @@ spec:
       - paths: ["/metadata/annotations/prometheus-operator-validated"]
         target:
           kind: PrometheusRule
-  values:
-    grafana:
-      service:
-        type: ClusterIP
-        annotations:
-          tailscale.com/expose: "true"
-          tailscale.com/hostname: grafana
+  valuesFrom:
+    - kind: ConfigMap
+      name: prometheus-values
