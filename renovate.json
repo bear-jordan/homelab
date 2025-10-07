@@ -6,10 +6,7 @@
     "fileMatch": ["(^|/)package\\.json$"]
   },
   "kubernetes": {
-    "fileMatch": [
-      "\\.yaml$"
-    ]
+    "fileMatch": ["\\.yaml$"]
   },
   "ignorePaths": ["clusters/production/flux-system/**"]
 }
-
