@@ -8,5 +8,5 @@ prometheus:
     enabled: true
 service:
   annotations:
-    tailscale.com/expose: true
+    tailscale.com/expose: "true"
     tailscale.com/hostname: coredns
