@@ -16,5 +16,5 @@ spec:
                 - bear-jordan/homelab
               envFrom:
                 - configMapRef:
-                  name: renovate-config-map
+                    name: renovate-config-map
           restartPolicy: Never
