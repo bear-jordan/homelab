@@ -4,5 +4,5 @@ nameReference:
     fieldSpecs:
       - group: helm.toolkit.fluxcd.io
         kind: HelmRelease
-        path: spec/valuesFrom/name
         version: v2
+        path: spec/valuesFrom/name
