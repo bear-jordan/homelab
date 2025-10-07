@@ -17,4 +17,4 @@ spec:
               envFrom:
                 - configMapRef:
                   name: renovate-config-map
-          restartPolicy: never
+          restartPolicy: Never
