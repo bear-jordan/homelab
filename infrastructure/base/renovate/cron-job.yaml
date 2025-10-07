@@ -17,4 +17,11 @@ spec:
               envFrom:
                 - configMapRef:
                     name: renovate-config-map
+              securityContext:
+                allowPrivilegeEscalation: false
+                runAsNonRoot: true
+                seccompProfile:
+                  type: RuntimeDefault
+                capabilities:
+                  drop: ["ALL"]
           restartPolicy: Never
