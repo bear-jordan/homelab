@@ -1,0 +1,13 @@
+isClusterService: false
+prometheus:
+  monitor:
+    enabled: true
+    namespace: coredns
+    interval: 30s
+  service:
+    enabled: true
+service:
+  annotations:
+    tailscale.com/expose: true
+    tailscale.com/hostname: coredns
+
