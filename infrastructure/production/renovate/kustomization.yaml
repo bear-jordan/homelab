@@ -6,7 +6,7 @@ resources:
   - namespace.yaml
   - secrets.yaml
 patches:
-  - path: patch-release.yaml
+  - path: patch-cron-job.yaml
     target:
       group: batch
       version: v1
