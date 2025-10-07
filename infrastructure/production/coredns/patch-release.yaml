@@ -15,7 +15,8 @@ spec:
         plugins:
           - name: errors
           - name: health
-            parameters: "lameduck 10s"
+            configBlock: |
+              lameduck 10s
           - name: ready
           - name: rewrite
             parameters: "name grafana.local grafana.monitoring.svc.cluster.local"
