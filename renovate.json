@@ -28,4 +28,3 @@
   ],
   "ignorePaths": ["clusters/production/flux-system/**"]
 }
-
