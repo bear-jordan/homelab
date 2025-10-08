@@ -16,10 +16,9 @@ prometheus:
     enabled: true
 
 servers:
+  # Authoritative server for homelab.lan
   - zones:
-      - zone: cluster.local
-      - zone: in-addr.arpa
-      - zone: ip6.arpa
+      - zone: "homelab.lan."
     port: 53
     plugins:
       - name: errors
@@ -27,6 +26,10 @@ servers:
         configBlock: |
           lameduck 10s
       - name: ready
+      - name: rewrite
+        configBlock: |
+          name suffix homelab.lan svc.cluster.local
+          answer name suffix svc.cluster.local homelab.lan
       - name: kubernetes
         parameters: "cluster.local in-addr.arpa ip6.arpa"
         configBlock: |
@@ -39,5 +42,21 @@ servers:
         parameters: "30"
       - name: loop
       - name: reload
+
+  - zones:
+      - zone: "."
+    port: 53
+    plugins:
+      - name: errors
+      - name: health
+        configBlock: |
+          lameduck 10s
+      - name: ready
+      - name: prometheus
+        parameters: "0.0.0.0:9153"
+      - name: cache
+        parameters: "30"
+      - name: loop
+      - name: reload
       - name: forward
-        parameters: ". 100.100.100.100"
+        parameters: ". /etc/resolv.conf"
