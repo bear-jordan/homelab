@@ -41,14 +41,3 @@ servers:
       - name: reload
       - name: forward
         parameters: ". 100.100.100.100"
-  - zones:
-      - zone: lan
-    port: 53
-    plugins:
-      - name: errors
-      - name: ready
-      - name: k8s_external
-      - name: cache
-        parameters: "30"
-      - name: forward
-        parameters: ". 100.100.100.100"
