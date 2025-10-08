@@ -1,12 +1,31 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "enabledManagers": ["npm", "kubernetes"],
+  "enabledManagers": ["npm", "kubernetes", "terraform"],
   "npm": {
-    "enabled": true,
     "fileMatch": ["(^|/)package\\.json$"]
   },
   "kubernetes": {
     "fileMatch": ["\\.yaml$"]
   },
+  "terraform": {
+    "fileMatch": [
+      "(^|/)[^/]+\\.tf$",
+      "(^|/)[^/]+\\.tfvars$",
+      "(^|/)\\.terraform\\.lock\\.hcl$"
+    ]
+  },
+  "packageRules": [
+    {
+      "matchManagers": ["terraform"],
+      "matchDepTypes": ["provider"],
+      "groupName": "terraform providers"
+    },
+    {
+      "matchManagers": ["terraform"],
+      "matchDepTypes": ["module"],
+      "groupName": "terraform modules"
+    }
+  ],
   "ignorePaths": ["clusters/production/flux-system/**"]
 }
+
