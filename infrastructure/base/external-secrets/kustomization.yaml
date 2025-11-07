@@ -9,6 +9,8 @@ resources:
 
 configMapGenerator:
   - name: external-secrets-values
-    files: values.yaml=values.yaml
+    files:
+      - values.yaml=values.yaml
 
-configurations: kustomize-config.yaml
+configurations:
+  - kustomize-config.yaml
