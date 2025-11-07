@@ -6,3 +6,10 @@ resources:
   - repository.yaml
   - release.yaml
   - secret-store.yaml
+
+configMapGenerator:
+  - name: external-secrets-values
+    files: values.yaml=values.yaml
+
+configurations:
+  kustomize-config.yaml
