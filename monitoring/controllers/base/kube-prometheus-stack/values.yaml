@@ -4,3 +4,6 @@ grafana:
     annotations:
       tailscale.com/expose: "true"
       tailscale.com/hostname: grafana
+    admin:
+      existingSecret: grafana-secrets
+      passwordKey: password
