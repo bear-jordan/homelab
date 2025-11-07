@@ -4,6 +4,8 @@ metadata:
   name: monitoring-controllers
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: crds
   interval: 1m0s
   retryInterval: 1m
   timeout: 5m
@@ -23,6 +25,8 @@ metadata:
   name: monitoring-config
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: crds
   interval: 1m0s
   retryInterval: 1m
   timeout: 5m
