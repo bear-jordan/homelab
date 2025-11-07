@@ -12,7 +12,3 @@ spec:
         kind: HelmRepository
         name: external-secrets
   interval: 1m0s
-  install:
-    crds: Create
-  updgrade:
-    crds: CreateReplace
