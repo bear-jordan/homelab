@@ -5,6 +5,7 @@ resources:
   - release.yaml
   - repository.yaml
   - namespace.yaml
+  - grafana-secrets.yaml
 
 configMapGenerator:
   - name: prometheus-values
