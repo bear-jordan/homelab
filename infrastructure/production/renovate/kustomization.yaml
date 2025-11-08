@@ -4,7 +4,6 @@ namespace: renovate
 resources:
   - ../../base/renovate/
   - secrets.yaml
-  - test-secret.yaml
 patches:
   - path: patch-cron-job.yaml
     target:
