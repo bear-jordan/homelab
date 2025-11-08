@@ -10,6 +10,7 @@
 ## Kit
 
 Homelab is running with:
+
 - Several smaller Intel Nucs and Thinkcentre's
 - UGreen NAS
 - Talos
@@ -20,6 +21,7 @@ Homelab is running with:
 # Todo
 
 Plan:
+
 1. Clean up secrets management
 2. Set up databases
 3. Set up airflow / dbt
