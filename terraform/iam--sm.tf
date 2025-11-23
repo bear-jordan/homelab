@@ -19,10 +19,10 @@ resource "aws_iam_policy" "sm_policy" {
     Statement = [
       {
         Action = [
-          "ssm:GetSecretValue*",
-          "ssm:Describe*",
-          "ssm:Get*",
-          "ssm:List*",
+          "secretsmanager:GetSecretValue*",
+          "secretsmanager:Describe*",
+          "secretsmanager:Get*",
+          "secretsmanager:List*",
         ]
         Effect   = "Allow"
         Resource = "*"
