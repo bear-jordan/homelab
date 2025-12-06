@@ -3,11 +3,3 @@ kind: Kustomization
 namespace: tailscale
 resources:
   - ../../base/tailscale/
-  - oauth-secrets.yaml
-patches:
-  - path: patch-release.yaml
-    target:
-      group: helm.toolkit.fluxcd.io
-      version: v2
-      kind: HelmRelease
-      name: tailscale
