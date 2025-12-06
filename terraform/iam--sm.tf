@@ -1,34 +1,4 @@
-# --- trust policy ---
-data "aws_iam_policy_document" "sm_trust" {
-  statement {
-    sid    = "AllowServiceUserAssumeRole"
-    effect = "Allow"
-
-    principals {
-      type        = "AWS"
-      identifiers = [aws_iam_user.sm.arn]
-    }
-
-    actions = ["sts:AssumeRole"]
-  }
-
-  statement {
-    sid    = "AllowSsoAdminAssumeRole"
-    effect = "Allow"
-
-    principals {
-      type = "AWS"
-      identifiers = [
-        local.sso_admin_role
-      ]
-    }
-
-    actions = ["sts:AssumeRole"]
-  }
-}
-
-
-# --- secrets manager role ---
+# --- secrets manager policy ---
 data "aws_iam_policy_document" "sm_read_secrets" {
   statement {
     sid    = "SecretsManagerReadOnly"
@@ -45,18 +15,6 @@ data "aws_iam_policy_document" "sm_read_secrets" {
   }
 }
 
-resource "aws_iam_role" "sm" {
-  name               = "k8s-secrets-manager-role"
-  assume_role_policy = data.aws_iam_policy_document.sm_trust.json
-}
-
-resource "aws_iam_role_policy" "sm_read_secrets" {
-  name   = "k8s-secrets-manager-readonly"
-  role   = aws_iam_role.sm.id
-  policy = data.aws_iam_policy_document.sm_read_secrets.json
-}
-
-
 # --- service user ---
 resource "aws_iam_user" "sm" {
   name = "k8s-external-secrets-manager-user"
@@ -67,20 +25,10 @@ resource "aws_iam_access_key" "sm" {
   user = aws_iam_user.sm.name
 }
 
-data "aws_iam_policy_document" "sm_user_assume_role" {
-  statement {
-    sid    = "AllowAssumeSecretsManagerRole"
-    effect = "Allow"
-
-    actions   = ["sts:AssumeRole"]
-    resources = [aws_iam_role.sm.arn]
-  }
-}
-
-resource "aws_iam_user_policy" "sm_user_assume_role" {
-  name   = "k8s-external-secrets-assume-role"
+resource "aws_iam_user_policy" "sm_user_read_only" {
+  name   = "sm-user-read-only"
   user   = aws_iam_user.sm.name
-  policy = data.aws_iam_policy_document.sm_user_assume_role.json
+  policy = data.aws_iam_policy_document.sm_read_secrets.json
 }
 
 
@@ -92,10 +40,5 @@ output "sm_access_key_id" {
 
 output "sm_secret_access_key" {
   value     = aws_iam_access_key.sm.secret
-  sensitive = true
-}
-
-output "sm_role_arn" {
-  value     = aws_iam_role.sm.arn
   sensitive = true
 }
