@@ -1,5 +1,5 @@
 resource "aws_secretsmanager_secret" "aws_sm_secrets" {
-  name                    = "external-secrets/aws-access"
+  name                    = "external-secrets/aws-sm-secrets"
   description             = "secrets manager access"
   recovery_window_in_days = 7
   tags = merge(
