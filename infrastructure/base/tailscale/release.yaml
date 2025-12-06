@@ -13,11 +13,11 @@ spec:
         name: tailscale
     valuesFrom:
       - kind: Secret
-        name: oauth-secrets
+        name: tailscale-secrets
         valuesKey: client_id
         targetPath: oauth.clientId
       - kind: Secret
-        name: oauth-secrets
+        name: tailscale-secrets
         valuesKey: client_secret
         targetPath: oauth.clientSecret
   interval: 1m0s
