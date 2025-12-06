@@ -5,5 +5,3 @@ resources:
   - cron-job.yaml
   - config.yaml
   - namespace.yaml
-  - secret-store.yaml
-  - secrets.yaml
