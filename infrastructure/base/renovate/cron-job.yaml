@@ -17,6 +17,8 @@ spec:
               envFrom:
                 - configMapRef:
                     name: renovate-config-map
+                - secretRef:
+                    name: renovate-secrets
               securityContext:
                 allowPrivilegeEscalation: false
                 runAsNonRoot: true

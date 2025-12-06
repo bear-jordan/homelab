@@ -3,13 +3,3 @@ kind: Kustomization
 namespace: renovate
 resources:
   - ../../base/renovate/
-  - secrets.yaml
-  - test-secret.yaml
-  - secret-store.yaml
-patches:
-  - path: patch-cron-job.yaml
-    target:
-      group: batch
-      version: v1
-      kind: CronJob
-      name: renovate
