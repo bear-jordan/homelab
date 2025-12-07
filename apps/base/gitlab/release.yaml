@@ -5,8 +5,8 @@ metadata:
 spec:
   chart:
     spec:
-      chart: gitlab
-      version: 9.6.*
+      chart: kubernetes-gitlab-demo
+      version: 0.1.29
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
