@@ -1,0 +1,7 @@
+global:
+  hosts:
+    domain: example.com
+  ingress:
+    configureCertmanager: true
+certmanager-issuer:
+  email: bearjordan+gitlab@gmail.com
