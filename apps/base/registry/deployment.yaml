@@ -22,4 +22,5 @@ spec:
               mountPath: /var/lib/registry
       volumes:
         - name: data
-          emptyDir: {} # placeholder
+          persistentVolumeClaim:
+            claimName: registry-data

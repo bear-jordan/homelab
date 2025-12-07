@@ -4,3 +4,4 @@ namespace: registry
 resources:
   - deployment.yaml
   - namespace.yaml
+  - volumes.yaml
